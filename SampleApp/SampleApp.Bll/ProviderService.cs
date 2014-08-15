@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using SampleApp.Core.Interfaces.Services;
 using SampleApp.Entities.Abstraction;
 using SampleApp.Entities.Models;
+using SampleApp.Service.Properties;
 
 namespace SampleApp.Service
 {
-    public class ProviderService : IProvider
+    public class ProviderService : ServiceBase, IProvider
     {
         #region  Fields
 
@@ -20,16 +21,19 @@ namespace SampleApp.Service
         {
             _unitOfWork = unitOfWork;
         }
+
         public ProviderModel GetProvider(int id)
         {
+            return LogIfOperationFailed(() =>
+            {
+                var providerEntity = _unitOfWork.ProviderRepository.Find(id);
 
-           var providerEntity= _unitOfWork.ProviderRepository.Find(id);
+                //ToDo:Need to implement Automapper
 
-            //ToDo:Need to implement Automapper
+                ProviderModel providerModel = new ProviderModel { Name = providerEntity.Name };
 
-           ProviderModel providerModel = new ProviderModel { Name = providerEntity.Name};
-
-           return providerModel;
+                return providerModel;
+            }, Resources.ExceptionGetProvider, id);
         }
 
 
@@ -38,6 +42,6 @@ namespace SampleApp.Service
             throw new NotImplementedException();
         }
         #endregion
-        
+
     }
 }
