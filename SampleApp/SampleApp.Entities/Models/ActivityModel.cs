@@ -1,13 +1,7 @@
 ﻿
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SampleApp.Core.Abstraction;
 
-namespace SampleApp.Core.Models
+namespace SampleApp.Entities.Models
 {
    
     public class ActivityModel 

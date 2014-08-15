@@ -61,6 +61,10 @@
       <Project>{797d57ab-fc7c-48cd-8333-081950ff142d}</Project>
       <Name>SampleApp.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Entities\SampleApp.Entities.csproj">
+      <Project>{1860c3a9-6c0a-421a-9108-af5dc34a650c}</Project>
+      <Name>SampleApp.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

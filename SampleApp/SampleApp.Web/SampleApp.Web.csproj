@@ -537,9 +537,9 @@
       <Project>{797d57ab-fc7c-48cd-8333-081950ff142d}</Project>
       <Name>SampleApp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleApp.DAL\SampleApp.DAL.csproj">
-      <Project>{3ef35520-0197-46b5-aa96-4832f2deb233}</Project>
-      <Name>SampleApp.DAL</Name>
+    <ProjectReference Include="..\SampleApp.Entities\SampleApp.Entities.csproj">
+      <Project>{1860c3a9-6c0a-421a-9108-af5dc34a650c}</Project>
+      <Name>SampleApp.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

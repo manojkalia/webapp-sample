@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-namespace SampleApp.Core.Abstraction
+
+namespace SampleApp.Entities.Abstraction
 {
     public interface IEntityRepository<T> where T : class, IEntity
     {

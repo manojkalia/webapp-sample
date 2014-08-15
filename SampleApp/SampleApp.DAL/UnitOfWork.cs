@@ -1,16 +1,12 @@
-﻿using SampleApp.Core.Abstraction;
-using SampleApp.Core.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SampleApp.Entities.Abstraction;
+using SampleApp.Entities.Domain;
 
 namespace SampleApp.DAL
 {
   
 
     public class UnitOfWork : IUnitOfWork
+
     {
         private readonly SampleContext _context;
 

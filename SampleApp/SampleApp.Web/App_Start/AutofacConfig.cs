@@ -1,14 +1,9 @@
-﻿using Autofac;
-using Autofac.Integration.WebApi;
-using SampleApp.Core.Abstraction;
-using SampleApp.DAL;
-using SampleApp.Service.Provider;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+﻿using System.Reflection;
 using System.Web.Http;
+using Autofac;
+using Autofac.Integration.WebApi;
+using SampleApp.Core.Interfaces.Services;
+using SampleApp.Service;
 
 namespace SampleApp.Web
 {
@@ -20,8 +15,8 @@ namespace SampleApp.Web
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<ProviderService>().As<IProvider>();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
-            builder.RegisterType<SampleContext>().AsSelf();
+            //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
+            //builder.RegisterType<SampleContext>().AsSelf();
 
             var container = builder.Build();
             var resolver = new AutofacWebApiDependencyResolver(container);

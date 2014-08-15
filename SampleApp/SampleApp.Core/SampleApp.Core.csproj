@@ -40,26 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstraction\IEntity.cs" />
-    <Compile Include="Abstraction\IEntityRepository.cs" />
-    <Compile Include="Abstraction\IUnitOfWork.cs" />
-    <Compile Include="Domain\Activity.cs" />
-    <Compile Include="Domain\Consultant.cs" />
-    <Compile Include="Domain\Contract.cs" />
-    <Compile Include="Domain\Provider.cs" />
-    <Compile Include="Domain\ProviderActivity.cs" />
-    <Compile Include="Domain\ProviderConsultant.cs" />
-    <Compile Include="Domain\SiteLocation.cs" />
-    <Compile Include="Models\ActivityModel.cs" />
-    <Compile Include="Models\ConsultantModel.cs" />
-    <Compile Include="Models\ContractModel.cs" />
-    <Compile Include="Models\ProviderActivityModel.cs" />
-    <Compile Include="Models\ProviderConsultantModel.cs" />
-    <Compile Include="Models\ProviderModel.cs" />
-    <Compile Include="Models\SiteLocationModel.cs" />
+    <Compile Include="Interfaces\Services\IProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\DAL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Entities\SampleApp.Entities.csproj">
+      <Project>{1860c3a9-6c0a-421a-9108-af5dc34a650c}</Project>
+      <Name>SampleApp.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

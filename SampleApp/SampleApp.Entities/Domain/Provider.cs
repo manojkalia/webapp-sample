@@ -1,12 +1,8 @@
-﻿using SampleApp.Core.Abstraction;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SampleApp.Entities.Abstraction;
 
-namespace SampleApp.Core.Domain
+namespace SampleApp.Entities.Domain
 {
     /// <summary>
     /// Provider entity
