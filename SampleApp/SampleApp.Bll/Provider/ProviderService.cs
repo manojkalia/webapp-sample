@@ -34,6 +34,14 @@ namespace SampleApp.Service.Provider
            return providerModel;
         }
 
+
+        public List<ProviderModel> GetAllProvider()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+
+
+        
     }
 }
