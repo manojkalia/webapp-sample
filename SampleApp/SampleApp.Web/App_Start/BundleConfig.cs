@@ -30,6 +30,8 @@ namespace SampleApp.Web
                    "~/app/common/common-service.js",
                    "~/app/settings/controllers/settings-ctrl.js",
                    "~/app/providers/controllers/provider-ctrl.js",
+                   "~/app/providers/services/provider-service.js",
+                   
                    "~/app/aboutus/controllers/aboutus-ctrl.js",
                    "~/app/contactus/controllers/contactus-ctrl.js",
                    "~/app/home/controllers/home-ctrl.js"

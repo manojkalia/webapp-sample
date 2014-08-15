@@ -2,6 +2,7 @@
 using System.Web.Http;
 using SampleApp.Core.Interfaces.Services;
 using SampleApp.Entities.Models;
+using System.Linq;
 
 namespace SampleApp.Web.Controllers
 {
@@ -31,9 +32,9 @@ namespace SampleApp.Web.Controllers
 
 
         // GET api/provider
-        public IEnumerable<string> Get()
+        public IQueryable<ProviderModel> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _providerService.GetAllProviders().AsQueryable();
         }
 
        

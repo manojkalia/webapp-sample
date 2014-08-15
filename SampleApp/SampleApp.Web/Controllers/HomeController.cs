@@ -10,8 +10,7 @@ namespace SampleApp.Web.Controllers
     {
         public ActionResult Index()
         {
-           
-
+        
             return View();
         }
     }

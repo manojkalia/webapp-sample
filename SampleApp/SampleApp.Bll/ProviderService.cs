@@ -4,6 +4,8 @@ using SampleApp.Core.Interfaces.Services;
 using SampleApp.Entities.Abstraction;
 using SampleApp.Entities.Models;
 using SampleApp.Service.Properties;
+using SampleApp.Service.Mappers;
+using System.Linq;
 
 namespace SampleApp.Service
 {
@@ -37,9 +39,17 @@ namespace SampleApp.Service
         }
 
 
-        public List<ProviderModel> GetAllProvider()
+        public List<ProviderModel> GetAllProviders()
         {
-            throw new NotImplementedException();
+            return LogIfOperationFailed(() =>
+            {
+                var providerEntity = _unitOfWork.ProviderRepository.GetAll;
+                var providerModelList = new List<ProviderModel>();
+                // ToDo:Need to implement Automapper
+                providerEntity.ToList().ForEach(m => { providerModelList.Add(ProviderMapper.ConvertEntityToModel(m)); });
+
+                return providerModelList;
+            }, Resources.ExceptionGetForAllProviders, "Provider");
         }
         #endregion
 

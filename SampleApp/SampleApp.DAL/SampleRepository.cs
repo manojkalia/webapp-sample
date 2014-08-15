@@ -34,7 +34,7 @@ namespace SampleApp.DAL
 
         public IQueryable<T> All
         {
-            get { return _dbSet.ToList().AsQueryable(); }
+            get { return _dbSet.AsQueryable(); }
         }
 
         public IQueryable<T> GetAll

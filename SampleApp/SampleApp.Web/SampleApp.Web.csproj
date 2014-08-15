@@ -52,6 +52,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -142,7 +145,6 @@
     <Folder Include="app\login\directories\" />
     <Folder Include="app\login\services\" />
     <Folder Include="app\providers\directories\" />
-    <Folder Include="app\providers\services\" />
     <Folder Include="app\settings\directories\" />
     <Folder Include="app\settings\services\" />
     <Folder Include="App_Data\" />
@@ -180,6 +182,7 @@
     <Content Include="app\login\controllers\login-ctrl.js" />
     <Content Include="app\login\views\login.html" />
     <Content Include="app\providers\controllers\provider-ctrl.js" />
+    <Content Include="app\providers\services\provider-service.js" />
     <Content Include="app\providers\views\provider.html" />
     <Content Include="app\settings\controllers\settings-ctrl.js" />
     <Content Include="app\settings\views\settings.html" />
@@ -521,7 +524,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -544,6 +549,10 @@
     <ProjectReference Include="..\SampleApp.Core\SampleApp.Core.csproj">
       <Project>{797d57ab-fc7c-48cd-8333-081950ff142d}</Project>
       <Name>SampleApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.DAL\SampleApp.DAL.csproj">
+      <Project>{3ef35520-0197-46b5-aa96-4832f2deb233}</Project>
+      <Name>SampleApp.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleApp.Entities\SampleApp.Entities.csproj">
       <Project>{1860c3a9-6c0a-421a-9108-af5dc34a650c}</Project>
