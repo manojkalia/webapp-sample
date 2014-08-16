@@ -75,11 +75,14 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     }
       
     $scope.addUpdateContract = function (contract) {
+        contract.ProviderId = $scope.ProviderDetail.Id;
         ContractFactory.save(contract, function (response) {
             $scope.isContractShow = false;
-            ContractFactory.query(function (response) {
+            ProviderFactory.get({ key: $scope.ProviderDetail.Id }, function (response) {
+                console.log(response);
 
-                $scope.ProviderDetail.Contracts = response;
+                $scope.ProviderDetail.Contracts = response.Contracts;
+
             });
         });
     }

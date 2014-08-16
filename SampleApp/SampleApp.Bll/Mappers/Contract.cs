@@ -16,6 +16,7 @@ namespace SampleApp.Service.Mappers
            contractModel.Code = contract.Code;
            contractModel.Id = contract.Id;
            contractModel.Number = contract.Number;
+           contractModel.ProviderId = contract.ProviderId;
 
 
 
@@ -29,6 +30,8 @@ namespace SampleApp.Service.Mappers
            contract.Code = contractModel.Code;
            contract.Id = contractModel.Id;
            contract.Number = contractModel.Number;
+           contract.ProviderId = contractModel.ProviderId;
+           
            return contract;
        }
     }
