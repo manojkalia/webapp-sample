@@ -140,6 +140,7 @@
     <Folder Include="app\client\views\" />
     <Folder Include="app\contactus\directories\" />
     <Folder Include="app\contactus\services\" />
+    <Folder Include="app\contracts\directories\" />
     <Folder Include="app\home\directories\" />
     <Folder Include="app\home\services\" />
     <Folder Include="app\login\directories\" />
@@ -156,6 +157,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProviderController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -177,6 +179,10 @@
     <Content Include="app\common\services.js" />
     <Content Include="app\contactus\controllers\contactus-ctrl.js" />
     <Content Include="app\contactus\views\contactus.html" />
+    <Content Include="app\contracts\controllers\contract-ctrl.js" />
+    <Content Include="app\contracts\services\contract-service.js" />
+    <Content Include="app\contracts\views\provider-detail.html" />
+    <Content Include="app\contracts\views\provider.html" />
     <Content Include="app\home\controllers\home-ctrl.js" />
     <Content Include="app\home\views\home.html" />
     <Content Include="app\login\controllers\login-ctrl.js" />

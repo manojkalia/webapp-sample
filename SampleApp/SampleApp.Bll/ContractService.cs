@@ -10,7 +10,7 @@ using SampleApp.Entities.Domain;
 
 namespace SampleApp.Service
 {
-    public class ProviderService : ServiceBase, IProvider
+    public class ContractService : ServiceBase, IContract
     {
         #region  Fields
 
@@ -20,38 +20,36 @@ namespace SampleApp.Service
 
         #region Methods
 
-        public ProviderService(IUnitOfWork unitOfWork)
+        public ContractService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public ProviderModel GetProvider(int id)
+        public ContractModel GetContract(int id)
         {
             return LogIfOperationFailed(() =>
             {
-                var providerEntity = _unitOfWork.ProviderRepository.Find(id);
+                var contractEntity = _unitOfWork.ContractRepository.Find(id);
 
                 //ToDo:Need to implement Automapper
 
-                ProviderModel providerModel = ProviderMapper.ConvertEntityToModel(providerEntity);
+                ContractModel contractModel = ContractMapper.ConvertEntityToModel(contractEntity);
 
-                return providerModel;
+                return contractModel;
             }, Resources.ExceptionGetProvider, id);
         }
 
 
-        public List<ProviderModel> GetAllProviders()
+        public List<ContractModel> GetAllContracts()
         {
             return LogIfOperationFailed(() =>
             {
-                var providerEntity = _unitOfWork.ProviderRepository.GetAll;
-                var providerModelList = new List<ProviderModel>();
+                var contractEntity = _unitOfWork.ContractRepository.GetAll;
+                var ContractModelList = new List<ContractModel>();
                 // ToDo:Need to implement Automapper
-                providerEntity
-                    .ToList()
-                    .ForEach(m => { providerModelList.Add(ProviderMapper.ConvertEntityToModel(m)); });
+                contractEntity.ToList().ForEach(m => { ContractModelList.Add(ContractMapper.ConvertEntityToModel(m)); });
 
-                return providerModelList;
+                return ContractModelList;
             }, Resources.ExceptionGetForAllProviders, "Provider");
         }
 
@@ -60,31 +58,31 @@ namespace SampleApp.Service
 
             return LogIfOperationFailed(() =>
             {
-                _unitOfWork.ProviderRepository.Delete(id);
+                _unitOfWork.ContractRepository.Delete(id);
                 _unitOfWork.Commit();
                 return true;
             }, Resources.ExceptionGetForAllProviders, "Provider");
             
         }
 
-        public bool Insert(ProviderModel providerModel)
+        public bool Insert(ContractModel contractModel)
         {
             return LogIfOperationFailed(() =>
             {
-                Provider provider = ProviderMapper.ConvertModelToEntity(providerModel);
-                _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
+                Contract contract = ContractMapper.ConvertModelToEntity(contractModel);
+                _unitOfWork.ContractRepository.InsertOrUpdate(contract);
                 _unitOfWork.Commit();
                 return true;
             }, Resources.ExceptionGetForAllProviders, "Provider");
            
         }
 
-        public bool Update(ProviderModel providerModel)
+        public bool Update(ContractModel contractModel)
         {
             return LogIfOperationFailed(() =>
             {
-                Provider provider = ProviderMapper.ConvertModelToEntity(providerModel);
-                _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
+                Contract contract = ContractMapper.ConvertModelToEntity(contractModel);
+                _unitOfWork.ContractRepository.InsertOrUpdate(contract);
                 _unitOfWork.Commit();
                 return true;
             }, Resources.ExceptionGetForAllProviders, "Provider");

@@ -15,7 +15,12 @@ namespace SampleApp.Service.Mappers
            ProviderModel providerModel = new ProviderModel();
            providerModel.Name = provider.Name;
            providerModel.Id = provider.Id;
-
+           if (provider.Contract !=null)
+           {
+               provider.Contract
+                   .ToList()
+                   .ForEach(m => providerModel.Contracts.Add(ContractMapper.ConvertEntityToModel(m)));
+           }
            return providerModel;
        }
 

@@ -17,6 +17,7 @@ namespace SampleApp.Web
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<ProviderService>().As<IProvider>();
+            builder.RegisterType<ContractService>().As<IContract>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<SampleContext>().AsSelf();
 

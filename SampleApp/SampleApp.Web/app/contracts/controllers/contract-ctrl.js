@@ -33,7 +33,7 @@
 
 }])
 
-app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'CommonFactory', 'ProviderFactory', 'ContractFactory', function ($scope, $location, $stateParams, CommonFactory, ProviderFactory, ContractFactory) {
+app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'CommonFactory', 'ProviderFactory', function ($scope, $location, $stateParams, CommonFactory, ProviderFactory) {
     ProviderFactory.get({ key: $stateParams.key }, function (response) {
         console.log(response);
         $scope.ProviderDetail = response;
@@ -57,12 +57,11 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     }
 
     $scope.isContractShow = false;
-
     //-------------------------#Region Contracts-------------------------------------------
 
 
                   // edit Provider object
-        $scope.addEditContract = function (contract) {
+    $scope.addEditContract = function (contract) {
         $scope.isContractShow = true;
         $scope.ContractDetail = {};
         $scope.ContractDetail.Id = contract.Id;
@@ -73,31 +72,7 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     $scope.Cancel = function (contract) {
         $scope.isContractShow = false;
     }
-      
-    $scope.addUpdateContract = function (contract) {
-        ContractFactory.save(contract, function (response) {
-            $scope.isContractShow = false;
-            ContractFactory.query(function (response) {
-
-                $scope.ProviderDetail.Contracts = response;
-            });
-        });
-    }
-
-
-    //delete Provider object
-    $scope.deleteContract = function (contractId) {
-
-        var conf = confirm("Are you sure you want to delete this Contract?");
-        if (conf) {
-            ContractFactory.remove({ key: contractId }, function (response) {
-                ContractFactory.query(function (response) {
-
-                    $scope.ProviderDetail.Contracts = response;
-                });
-            });
-        }
-    }
+               
    
     //-------------------------End Region--------------------------------------------------
 
