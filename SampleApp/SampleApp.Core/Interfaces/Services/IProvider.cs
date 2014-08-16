@@ -7,5 +7,8 @@ namespace SampleApp.Core.Interfaces.Services
     {
       ProviderModel GetProvider(int id);
       List<ProviderModel> GetAllProviders();
+      bool Delete(int id);
+      bool Insert(ProviderModel providerModel);
+      bool Update(ProviderModel providerModel);
     }
 }

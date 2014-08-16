@@ -183,6 +183,7 @@
     <Content Include="app\login\views\login.html" />
     <Content Include="app\providers\controllers\provider-ctrl.js" />
     <Content Include="app\providers\services\provider-service.js" />
+    <Content Include="app\providers\views\provider-detail.html" />
     <Content Include="app\providers\views\provider.html" />
     <Content Include="app\settings\controllers\settings-ctrl.js" />
     <Content Include="app\settings\views\settings.html" />

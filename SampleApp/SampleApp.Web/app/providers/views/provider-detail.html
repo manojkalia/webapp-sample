@@ -1,0 +1,21 @@
+﻿<div class="container">
+    <h1 ng-hide="isAdd">Update Provider</h1>
+    <h1 ng-show="isAdd">Add Provider</h1>
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group row">
+            <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
+            <div class="controls col-sm-10">
+                <input type="text" class="form-control" id="inputFirstName" ng-model="ProviderDetail.Name" />
+            </div>
+        </div>
+      <div class="control-group row">
+            <div class="controls">
+                <a ng-click="goToHome()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="updateProvider(ProviderDetail)" ng-hide="isAdd" class="btn btn-small btn-primary">Update</a>
+                <a ng-click="createNewProvider(ProviderDetail)" ng-show="isAdd" class="btn btn-small btn-primary">Add</a>
+            </div>
+        </div>
+    </form>
+
+
+</div>

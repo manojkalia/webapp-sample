@@ -21,6 +21,13 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', functio
             })
 
     $stateProvider
+            .state('provider-detail', {
+                url: '/provider-detail/:key',
+                templateUrl: 'app/providers/views/provider-detail.html',
+                controller: 'ProviderDetailCtrl'
+            })
+
+    $stateProvider
             .state('home', {
                 url: '/home',
                 templateUrl: 'app/home/views/home.html',

@@ -6,6 +6,7 @@ using SampleApp.Entities.Models;
 using SampleApp.Service.Properties;
 using SampleApp.Service.Mappers;
 using System.Linq;
+using SampleApp.Entities.Domain;
 
 namespace SampleApp.Service
 {
@@ -32,7 +33,7 @@ namespace SampleApp.Service
 
                 //ToDo:Need to implement Automapper
 
-                ProviderModel providerModel = new ProviderModel { Name = providerEntity.Name };
+                ProviderModel providerModel = ProviderMapper.ConvertEntityToModel(providerEntity);
 
                 return providerModel;
             }, Resources.ExceptionGetProvider, id);
@@ -51,7 +52,48 @@ namespace SampleApp.Service
                 return providerModelList;
             }, Resources.ExceptionGetForAllProviders, "Provider");
         }
+
+        public bool Delete(int id)
+        {
+
+            return LogIfOperationFailed(() =>
+            {
+                _unitOfWork.ProviderRepository.Delete(id);
+                _unitOfWork.Commit();
+                return true;
+            }, Resources.ExceptionGetForAllProviders, "Provider");
+            
+        }
+
+        public bool Insert(ProviderModel providerModel)
+        {
+            return LogIfOperationFailed(() =>
+            {
+                Provider provider = ProviderMapper.ConvertModelToEntity(providerModel);
+                _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
+                _unitOfWork.Commit();
+                return true;
+            }, Resources.ExceptionGetForAllProviders, "Provider");
+           
+        }
+
+        public bool Update(ProviderModel providerModel)
+        {
+            return LogIfOperationFailed(() =>
+            {
+                Provider provider = ProviderMapper.ConvertModelToEntity(providerModel);
+                _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
+                _unitOfWork.Commit();
+                return true;
+            }, Resources.ExceptionGetForAllProviders, "Provider");
+        }
         #endregion
 
+
+
+
+
+
+        
     }
 }

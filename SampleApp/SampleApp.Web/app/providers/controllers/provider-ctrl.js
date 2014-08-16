@@ -4,24 +4,55 @@
     $scope.Title = "Providers - list";
 
     // Calling categories list
-    ProviderFactory.get(function (response) {
-        console.log(response.value);
-        $scope.providers = response.value;
+    ProviderFactory.query(function (response) {
+       
+        $scope.providers = response;
     });
 
-    //// edit category object
-    //$scope.editCategory = function (categoryId) {
-    //    $state.go('category-detail', { "key": categoryId });
-    //    // $location.path('/category-detail/?' + categoryId);
-    //}
+    // edit Provider object
+    $scope.addEditProvider = function (providerId) {
+        $state.go('provider-detail', { "key": providerId });
+        // $location.path('/category-detail/?' + categoryId);
+    }
 
-    // delete category object
-    //$scope.deleteCategory = function (categoryId) {
-    //    CategoryFactory.remove({ key: categoryId }, function (response) {
-    //        CategoryFactory.get(function (response) {
-    //            $scope.categories = response.value;
-    //        });
-    //    });
-    //}
+  
+
+    //delete Provider object
+    $scope.deleteProvider = function (providerId) {
+
+        var conf = confirm("Are you sure you want to delete this Provider?");
+        if (conf) {
+            ProviderFactory.remove({ key: providerId }, function (response) {
+                ProviderFactory.query(function (response) {
+
+                    $scope.providers = response;
+                });
+            });
+        }
+    }
 
 }])
+
+app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'CommonFactory', 'ProviderFactory', function ($scope, $location, $stateParams, CommonFactory, ProviderFactory) {
+    ProviderFactory.get({ key: $stateParams.key }, function (response) {
+       
+        $scope.ProviderDetail = response;
+        $scope.isAdd = !($scope.ProviderDetail.Name) ? true : false;
+        
+    });
+    $scope.goToHome = function () {
+        $location.path('/providers');
+    }
+    $scope.updateProvider = function (provider) {
+        ProviderFactory.update({ key: provider.Id }, provider, function (response) {
+            $location.path('/providers');
+        });
+    }
+
+    $scope.createNewProvider = function (provider) {
+        console.log(provider);
+        ProviderFactory.save(provider, function (response) {
+            $location.path('/providers');
+        });
+    }
+}]);

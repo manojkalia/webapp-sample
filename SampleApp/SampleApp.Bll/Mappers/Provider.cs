@@ -18,5 +18,15 @@ namespace SampleApp.Service.Mappers
 
            return providerModel;
        }
+
+
+       public static Provider ConvertModelToEntity(ProviderModel providerModel)
+       {
+           Provider provider = new Provider();
+           provider.Name = providerModel.Name;
+           provider.Id = providerModel.Id;
+
+           return provider;
+       }
     }
 }
