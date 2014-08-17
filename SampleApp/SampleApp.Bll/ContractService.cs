@@ -39,7 +39,6 @@ namespace SampleApp.Service
             }, Resources.ExceptionGetProvider, id);
         }
 
-
         public List<ContractModel> GetAllContracts()
         {
             return LogIfOperationFailed(() =>
@@ -62,7 +61,7 @@ namespace SampleApp.Service
                 _unitOfWork.Commit();
                 return true;
             }, Resources.ExceptionGetForAllProviders, "Provider");
-            
+
         }
 
         public bool Insert(ContractModel contractModel)
@@ -74,7 +73,7 @@ namespace SampleApp.Service
                 _unitOfWork.Commit();
                 return true;
             }, Resources.ExceptionGetForAllProviders, "Provider");
-           
+
         }
 
         public bool Update(ContractModel contractModel)
@@ -88,12 +87,5 @@ namespace SampleApp.Service
             }, Resources.ExceptionGetForAllProviders, "Provider");
         }
         #endregion
-
-
-
-
-
-
-        
     }
 }

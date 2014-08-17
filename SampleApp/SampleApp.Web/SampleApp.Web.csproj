@@ -198,6 +198,7 @@
     <Content Include="app\settings\controllers\settings-ctrl.js" />
     <Content Include="app\settings\views\settings.html" />
     <Content Include="app\sitelocation\services\site-location-service.js" />
+    <Content Include="app\team\views\team.html" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />

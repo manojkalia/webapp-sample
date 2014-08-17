@@ -18,8 +18,6 @@ namespace SampleApp.Service.Mappers
            contractModel.Number = contract.Number;
            contractModel.ProviderId = contract.ProviderId;
 
-
-
            return contractModel;
        }
 

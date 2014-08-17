@@ -1,0 +1,59 @@
+﻿<h1>Consultants</h1>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="min-width: 20px;">Id</th>
+                    <th style="min-width: 30px;">Consultant Name</th>
+                    <th style="width: 25px;"></th>
+                    <th style="width: 25px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="providers.length > 0" ng-repeat="consultant in consultants">
+                    <td>{{ consultant.Id }} </td>
+                    <td>{{ consultant.Name }}</td>
+                    <td><a ng-click="addEditConsultant(consultant.Id)" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
+                    <td><a ng-click="deleteConsultant(consultant.Id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
+                </tr>
+                <tr ng-if="providers.length == 0">
+                    <td>No Consultant Found.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a ng-click="addEditConsultant(0)" class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#myConsultantModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Consultant</a>
+        </div>
+
+        <div class="modal fade" id="myConsultantModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div ng-show="" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Consultant</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
+                            <div class="controls col-sm-10">
+                                <input type="text" class="form-control" id="Text3" ng-model="Consultant.Name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputFirstName">Providers:</label>
+                            <div class="controls col-sm-10">
+                                <input type="text" class="form-control" id="Text4" ng-model="Consultant.Providers" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button ng-click="addUpdateContract(ContractDetail)" type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

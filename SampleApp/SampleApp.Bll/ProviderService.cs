@@ -39,7 +39,6 @@ namespace SampleApp.Service
             }, Resources.ExceptionGetProvider, id);
         }
 
-
         public List<ProviderModel> GetAllProviders()
         {
             return LogIfOperationFailed(() =>
@@ -52,18 +51,17 @@ namespace SampleApp.Service
                     .ForEach(m => { providerModelList.Add(ProviderMapper.ConvertEntityToModel(m)); });
 
                 return providerModelList;
-            }, Resources.ExceptionGetForAllProviders, "Provider");
+            }, Resources.ExceptionGetForAllProviders);
         }
 
         public bool Delete(int id)
         {
-
             return LogIfOperationFailed(() =>
             {
                 _unitOfWork.ProviderRepository.Delete(id);
                 _unitOfWork.Commit();
                 return true;
-            }, Resources.ExceptionGetForAllProviders, "Provider");
+            }, Resources.ExceptionDeleteProvider, "Provider");
             
         }
 
@@ -75,7 +73,7 @@ namespace SampleApp.Service
                 _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
                 _unitOfWork.Commit();
                 return true;
-            }, Resources.ExceptionGetForAllProviders, "Provider");
+            }, Resources.ExceptionInsertProvider, providerModel.Name);
            
         }
 
@@ -87,15 +85,8 @@ namespace SampleApp.Service
                 _unitOfWork.ProviderRepository.InsertOrUpdate(provider);
                 _unitOfWork.Commit();
                 return true;
-            }, Resources.ExceptionGetForAllProviders, "Provider");
+            }, Resources.ExceptionUpdateProvider, providerModel.Name);
         }
         #endregion
-
-
-
-
-
-
-        
     }
 }

@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ExceptionDeleteConsultant" xml:space="preserve">
+    <value>Error occured while consultant with id '{0}'</value>
+  </data>
+  <data name="ExceptionDeleteProvider" xml:space="preserve">
+    <value>Error occured while deleting provider with id '{0}'</value>
+  </data>
+  <data name="ExceptionGetConsultant" xml:space="preserve">
+    <value>Error occured while retriving Consultant for Id '{0}'</value>
+  </data>
+  <data name="ExceptionGetForAllConsultants" xml:space="preserve">
+    <value>Error occured while retriving all consultants</value>
+  </data>
   <data name="ExceptionGetForAllProviders" xml:space="preserve">
-    <value>Error occured while retriving Provider for Entity '{0}'</value>
+    <value>Error occured while retriving all Providers</value>
   </data>
   <data name="ExceptionGetProvider" xml:space="preserve">
     <value>Error occured while retriving Provider for id '{0}'</value>
+  </data>
+  <data name="ExceptionInsertConsultant" xml:space="preserve">
+    <value>Error occured while inserting consultant '{0}'</value>
+  </data>
+  <data name="ExceptionInsertProvider" xml:space="preserve">
+    <value>Error occured while inserting provider '{0}'</value>
+  </data>
+  <data name="ExceptionUpdateConsultant" xml:space="preserve">
+    <value>Error occured while updating consultant '{0}'</value>
+  </data>
+  <data name="ExceptionUpdateProvider" xml:space="preserve">
+    <value>Error occured while updating provider '{0}'</value>
   </data>
 </root>

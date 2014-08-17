@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultantService.cs" />
     <Compile Include="ContractService.cs" />
+    <Compile Include="Mappers\Consultant.cs" />
     <Compile Include="Mappers\Contract.cs" />
     <Compile Include="Mappers\Provider.cs" />
     <Compile Include="Mappers\SiteLocation.cs" />
