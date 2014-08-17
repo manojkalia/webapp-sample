@@ -148,6 +148,9 @@
     <Folder Include="app\providers\directories\" />
     <Folder Include="app\settings\directories\" />
     <Folder Include="app\settings\services\" />
+    <Folder Include="app\sitelocation\controllers\" />
+    <Folder Include="app\sitelocation\directories\" />
+    <Folder Include="app\sitelocation\views\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -160,6 +163,7 @@
     <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProviderController.cs" />
+    <Compile Include="Controllers\SiteLocationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +197,7 @@
     <Content Include="app\providers\views\provider.html" />
     <Content Include="app\settings\controllers\settings-ctrl.js" />
     <Content Include="app\settings\views\settings.html" />
+    <Content Include="app\sitelocation\services\site-location-service.js" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />

@@ -8,6 +8,7 @@ namespace SampleApp.Entities.Models
         public string Address { get; set; }
         public string NPI { get; set; }
         public string HFS { get; set; }
+        public int ProviderId { get; set; }
         public  ProviderModel Provider { get; set; }
      }
 }

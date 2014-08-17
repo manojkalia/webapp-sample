@@ -14,5 +14,6 @@ namespace SampleApp.Entities.Domain
         public string NPI { get; set; }
         public string HFS { get; set; }
         public virtual Provider Provider { get; set; }
+        public int ProviderId { get; set; }
      }
 }

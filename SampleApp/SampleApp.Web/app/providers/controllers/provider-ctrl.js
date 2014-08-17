@@ -33,7 +33,7 @@
 
 }])
 
-app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'CommonFactory', 'ProviderFactory', 'ContractFactory', function ($scope, $location, $stateParams, CommonFactory, ProviderFactory, ContractFactory) {
+app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'CommonFactory', 'ProviderFactory', 'ContractFactory', 'SiteLocationFactory', function ($scope, $location, $stateParams, CommonFactory, ProviderFactory, ContractFactory, SiteLocationFactory) {
     ProviderFactory.get({ key: $stateParams.key }, function (response) {
         console.log(response);
         $scope.ProviderDetail = response;
@@ -61,7 +61,7 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     //-------------------------#Region Contracts-------------------------------------------
 
 
-    // edit Provider object
+    // edit Contract object
     $scope.addEditContract = function (contract) {
         $scope.isContractShow = true;
         $scope.ContractDetail = {};
@@ -88,20 +88,65 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     }
 
 
-    //delete Provider object
+    //delete Contract object
     $scope.deleteContract = function (contractId) {
 
         var conf = confirm("Are you sure you want to delete this Contract?");
         if (conf) {
             ContractFactory.remove({ key: contractId }, function (response) {
-                ContractFactory.query(function (response) {
+                ProviderFactory.get({ key: $scope.ProviderDetail.Id }, function (response) {
+                    console.log(response);
 
-                    $scope.ProviderDetail.Contracts = response;
+                    $scope.ProviderDetail.Contracts = response.Contracts;
+
                 });
             });
         }
     }
 
     //-------------------------End Region--------------------------------------------------
+
+    //-------------------------#Region SiteLocation-------------------------------------------
+    // edit Contract object
+    $scope.addEditSiteLocation = function (siteLocation) {
+        $scope.isSiteLocationShow = true;
+        $scope.siteLocationDetail = {};
+        $scope.siteLocationDetail.Id = siteLocation.Id;
+        $scope.siteLocationDetail.Address = siteLocation.Address;
+        $scope.siteLocationDetail.NPI = siteLocation.NPI;
+        $scope.siteLocationDetail.HFS = siteLocation.HFS;
+    }
+
+    $scope.addUpdateSiteLocation = function (siteLocation) {
+        siteLocation.ProviderId = $scope.ProviderDetail.Id;
+        SiteLocationFactory.save(siteLocation, function (response) {
+            $scope.isSiteLocationShow = false;
+            ProviderFactory.get({ key: $scope.ProviderDetail.Id }, function (response) {
+                console.log(response);
+
+                $scope.ProviderDetail.SiteLocations = response.SiteLocations;
+
+            });
+        });
+    }
+
+
+    //delete Contract object
+    $scope.deleteSiteLocation = function (siteLocationId) {
+
+        var conf = confirm("Are you sure you want to delete this SiteLocation?");
+        if (conf) {
+            SiteLocationFactory.remove({ key: siteLocationId }, function (response) {
+                ProviderFactory.get({ key: $scope.ProviderDetail.Id }, function (response) {
+                    console.log(response);
+
+                    $scope.ProviderDetail.SiteLocations = response.SiteLocations;
+
+                });
+            });
+        }
+    }
+    //-------------------------End Region--------------------------------------------------
+
 
 }]);

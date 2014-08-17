@@ -42,6 +42,7 @@
     <Compile Include="ContractService.cs" />
     <Compile Include="Mappers\Contract.cs" />
     <Compile Include="Mappers\Provider.cs" />
+    <Compile Include="Mappers\SiteLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -50,6 +51,7 @@
     </Compile>
     <Compile Include="ProviderService.cs" />
     <Compile Include="ServiceBase.cs" />
+    <Compile Include="SiteLocationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Core\SampleApp.Core.csproj">

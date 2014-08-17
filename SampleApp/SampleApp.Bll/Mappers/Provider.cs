@@ -21,6 +21,13 @@ namespace SampleApp.Service.Mappers
                    .ToList()
                    .ForEach(m => providerModel.Contracts.Add(ContractMapper.ConvertEntityToModel(m)));
            }
+
+           if (provider.SiteLocation != null)
+           {
+               provider.SiteLocation
+                   .ToList()
+                   .ForEach(m => providerModel.SiteLocations.Add(SiteLocationMapper.ConvertEntityToModel(m)));
+           }
            return providerModel;
        }
 

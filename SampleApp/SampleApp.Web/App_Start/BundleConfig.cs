@@ -32,6 +32,7 @@ namespace SampleApp.Web
                    "~/app/providers/controllers/provider-ctrl.js",
                    "~/app/providers/services/provider-service.js",
                    "~/app/contracts/services/contract-service.js",
+                   "~/app/sitelocation/services/site-location-service.js",
 
                    
                    "~/app/aboutus/controllers/aboutus-ctrl.js",
