@@ -5,7 +5,7 @@
 
     // Calling categories list
     ProviderFactory.query(function (response) {
-       
+
         $scope.providers = response;
     });
 
@@ -15,7 +15,7 @@
         // $location.path('/category-detail/?' + categoryId);
     }
 
-  
+
 
     //delete Provider object
     $scope.deleteProvider = function (providerId) {
@@ -38,7 +38,7 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
         console.log(response);
         $scope.ProviderDetail = response;
         $scope.isAdd = !($scope.ProviderDetail.Name) ? true : false;
-        
+
     });
     $scope.goToHome = function () {
         $location.path('/providers');
@@ -61,8 +61,8 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     //-------------------------#Region Contracts-------------------------------------------
 
 
-                  // edit Provider object
-        $scope.addEditContract = function (contract) {
+    // edit Provider object
+    $scope.addEditContract = function (contract) {
         $scope.isContractShow = true;
         $scope.ContractDetail = {};
         $scope.ContractDetail.Id = contract.Id;
@@ -73,7 +73,7 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
     $scope.Cancel = function (contract) {
         $scope.isContractShow = false;
     }
-      
+
     $scope.addUpdateContract = function (contract) {
         contract.ProviderId = $scope.ProviderDetail.Id;
         ContractFactory.save(contract, function (response) {
@@ -101,7 +101,7 @@ app.controller('ProviderDetailCtrl', ['$scope', '$location', '$stateParams', 'Co
             });
         }
     }
-   
+
     //-------------------------End Region--------------------------------------------------
 
 }]);

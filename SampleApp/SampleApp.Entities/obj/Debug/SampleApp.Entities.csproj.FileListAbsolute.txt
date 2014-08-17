@@ -7,3 +7,4 @@ D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\Sample
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.pdb
+D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csprojResolveAssemblyReference.cache
