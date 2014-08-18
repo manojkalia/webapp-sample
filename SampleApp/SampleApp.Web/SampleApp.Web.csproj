@@ -135,7 +135,6 @@
     <Folder Include="app\aboutus\services\" />
     <Folder Include="app\activities\directories\" />
     <Folder Include="app\activities\services\" />
-    <Folder Include="app\activities\views\" />
     <Folder Include="app\client\directories\" />
     <Folder Include="app\client\views\" />
     <Folder Include="app\contactus\directories\" />
@@ -160,6 +159,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ConsultantController.cs" />
     <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -175,6 +175,7 @@
     <Content Include="app\aboutus\controllers\aboutus-ctrl.js" />
     <Content Include="app\aboutus\views\aboutus.html" />
     <Content Include="app\activities\controllers\activity-ctrl.js" />
+    <Content Include="app\activities\views\activity.html" />
     <Content Include="app\app.js" />
     <Content Include="app\client\controllers\client-ctrl.js" />
     <Content Include="app\client\services\client-sevice.js" />

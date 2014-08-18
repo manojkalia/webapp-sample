@@ -117,14 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ExceptionDeleteActivity" xml:space="preserve">
+    <value>Error occured while deleting activity with id '{0}'</value>
+  </data>
   <data name="ExceptionDeleteConsultant" xml:space="preserve">
     <value>Error occured while consultant with id '{0}'</value>
   </data>
   <data name="ExceptionDeleteProvider" xml:space="preserve">
     <value>Error occured while deleting provider with id '{0}'</value>
   </data>
+  <data name="ExceptionGetActivity" xml:space="preserve">
+    <value>Error occured while retriving Activity for Id '{0}'</value>
+  </data>
   <data name="ExceptionGetConsultant" xml:space="preserve">
     <value>Error occured while retriving Consultant for Id '{0}'</value>
+  </data>
+  <data name="ExceptionGetForAllActivitys" xml:space="preserve">
+    <value>Error occured while retriving all activities</value>
   </data>
   <data name="ExceptionGetForAllConsultants" xml:space="preserve">
     <value>Error occured while retriving all consultants</value>
@@ -135,11 +144,17 @@
   <data name="ExceptionGetProvider" xml:space="preserve">
     <value>Error occured while retriving Provider for id '{0}'</value>
   </data>
+  <data name="ExceptionInsertActivity" xml:space="preserve">
+    <value>Error occured while inserting activity '{0}'</value>
+  </data>
   <data name="ExceptionInsertConsultant" xml:space="preserve">
     <value>Error occured while inserting consultant '{0}'</value>
   </data>
   <data name="ExceptionInsertProvider" xml:space="preserve">
     <value>Error occured while inserting provider '{0}'</value>
+  </data>
+  <data name="ExceptionUpdateActivity" xml:space="preserve">
+    <value>Error occured while updating activity '{0}'</value>
   </data>
   <data name="ExceptionUpdateConsultant" xml:space="preserve">
     <value>Error occured while updating consultant '{0}'</value>

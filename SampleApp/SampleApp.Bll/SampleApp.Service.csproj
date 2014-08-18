@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityService.cs" />
     <Compile Include="ConsultantService.cs" />
     <Compile Include="ContractService.cs" />
+    <Compile Include="Mappers\Activity.cs" />
     <Compile Include="Mappers\Consultant.cs" />
     <Compile Include="Mappers\Contract.cs" />
     <Compile Include="Mappers\Provider.cs" />

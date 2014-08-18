@@ -61,6 +61,15 @@ namespace SampleApp.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error occured while deleting activity with id &apos;{0}&apos;.
+        /// </summary>
+        internal static string ExceptionDeleteActivity {
+            get {
+                return ResourceManager.GetString("ExceptionDeleteActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error occured while consultant with id &apos;{0}&apos;.
         /// </summary>
         internal static string ExceptionDeleteConsultant {
@@ -79,11 +88,29 @@ namespace SampleApp.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error occured while retriving Activity for Id &apos;{0}&apos;.
+        /// </summary>
+        internal static string ExceptionGetActivity {
+            get {
+                return ResourceManager.GetString("ExceptionGetActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error occured while retriving Consultant for Id &apos;{0}&apos;.
         /// </summary>
         internal static string ExceptionGetConsultant {
             get {
                 return ResourceManager.GetString("ExceptionGetConsultant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occured while retriving all activities.
+        /// </summary>
+        internal static string ExceptionGetForAllActivitys {
+            get {
+                return ResourceManager.GetString("ExceptionGetForAllActivitys", resourceCulture);
             }
         }
         
@@ -115,6 +142,15 @@ namespace SampleApp.Service.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error occured while inserting activity &apos;{0}&apos;.
+        /// </summary>
+        internal static string ExceptionInsertActivity {
+            get {
+                return ResourceManager.GetString("ExceptionInsertActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error occured while inserting consultant &apos;{0}&apos;.
         /// </summary>
         internal static string ExceptionInsertConsultant {
@@ -129,6 +165,15 @@ namespace SampleApp.Service.Properties {
         internal static string ExceptionInsertProvider {
             get {
                 return ResourceManager.GetString("ExceptionInsertProvider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occured while updating activity &apos;{0}&apos;.
+        /// </summary>
+        internal static string ExceptionUpdateActivity {
+            get {
+                return ResourceManager.GetString("ExceptionUpdateActivity", resourceCulture);
             }
         }
         

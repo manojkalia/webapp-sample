@@ -1,0 +1,53 @@
+﻿<h1>Activity</h1>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="min-width: 20px;">Id</th>
+                    <th style="min-width: 30px;">Activity Title</th>
+                    <th style="width: 25px;"></th>
+                    <th style="width: 25px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="activitys.length > 0" ng-repeat="activity in activitys">
+                    <td>{{ activity.Id }} </td>
+                    <td>{{ activity.Name }}</td>
+                    <td><a ng-click="addEditActivity(activity)" class="btn btn-primary" data-toggle="modal" data-target="#myActivityModal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
+                    <td><a ng-click="deleteActivity(activity.Id)" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
+                </tr>
+                <tr ng-if="activitys.length == 0">
+                    <td>No Activity Found.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a ng-click="addEditActivity()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myActivityModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Activity</a>
+        </div>
+
+        <div class="modal fade" id="myActivityModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div  class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Activity</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputFirstName">Title:</label>
+                            <div class="controls col-sm-10">
+                                <input type="text" class="form-control" id="Text3" ng-model="ActivityDetail.Title" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button ng-click="addUpdateActivity(ActivityDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

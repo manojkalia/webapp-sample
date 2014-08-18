@@ -2,7 +2,6 @@ E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\Sam
 E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
 E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll
 E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.pdb
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csprojResolveAssemblyReference.cache
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.dll
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
 D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll

@@ -12,7 +12,7 @@ namespace SampleApp.Entities.Domain
     public class Activity : IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string DeskReview { get; set; }
         public string OnsiteReview { get; set; }
         public virtual ICollection<ProviderActivity> ProviderActivity { get; set; }

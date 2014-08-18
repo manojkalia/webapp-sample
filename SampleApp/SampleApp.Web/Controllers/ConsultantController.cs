@@ -36,32 +36,24 @@ namespace SampleApp.Web.Controllers
             return _consultantService.GetConsultant(id);
         }
 
-
         // GET api/provider
         public IQueryable<ConsultantModel> Get()
         {
             return _consultantService.GetAllConsultants().AsQueryable();
         }
 
-
-
         // POST api/provider
-
         public IHttpActionResult Post([FromBody]ConsultantModel consultant)
         {
             try
             {
-
-
                 _consultantService.Insert(consultant);
                 return StatusCode(HttpStatusCode.NoContent);
-                  
             }
             catch (Exception ex)
             {
                 return InternalServerError();
             }
-
         }
 
         // PUT api/provider/5
