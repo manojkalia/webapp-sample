@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConsultantController.cs" />
     <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProviderController.cs" />
@@ -181,6 +182,8 @@
     <Content Include="app\common\directives.js" />
     <Content Include="app\common\filters.js" />
     <Content Include="app\common\services.js" />
+    <Content Include="app\consultant\controllers\consultant-ctrl.js" />
+    <Content Include="app\consultant\services\consultant-service.js" />
     <Content Include="app\contactus\controllers\contactus-ctrl.js" />
     <Content Include="app\contactus\views\contactus.html" />
     <Content Include="app\contracts\controllers\contract-ctrl.js" />
@@ -198,7 +201,7 @@
     <Content Include="app\settings\controllers\settings-ctrl.js" />
     <Content Include="app\settings\views\settings.html" />
     <Content Include="app\sitelocation\services\site-location-service.js" />
-    <Content Include="app\team\views\team.html" />
+    <Content Include="app\consultant\views\consultant.html" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />

@@ -29,7 +29,7 @@
                                 <td>{{ contract.Id }} </td>
                                 <td>{{ contract.Number }}</td>
                                 <td>{{ contract.Code }} </td>
-                                <td><a ng-click="addEditContract(contract)" class="btn btn-small btn-primary" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
+                                <td><a ng-click="addEditContract(contract)" class="btn btn-small btn-primary" data-target="#myContractModal" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
                                 <td><a ng-click="deleteContract(contract.Id)" class="btn btn-small btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
                             </tr>
                             <tr ng-if="ProviderDetail.Contracts.length == 0">
@@ -41,7 +41,7 @@
                         <a ng-click="addEditContract()" class="btn btn-small btn-primary" data-toggle="modal" data-target="#myContractModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Contract</a>
                     </div>
 
-                    <div class="modal fade" id="myContractModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="myContractModal" tabindex="-1" role="dialog" aria-labelledby="myContractModalLabel" aria-hidden="true">
                         <div ng-show="isContractShow" class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
