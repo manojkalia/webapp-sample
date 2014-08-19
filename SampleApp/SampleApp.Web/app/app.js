@@ -28,6 +28,13 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', functio
             })
 
     $stateProvider
+           .state('activities', {
+               url: '/activities',
+               templateUrl: 'app/activities/views/activity.html',
+               controller: 'ActivityCtrl'
+           })
+
+    $stateProvider
             .state('provider-detail', {
                 url: '/provider-detail/:key',
                 templateUrl: 'app/providers/views/provider-detail.html',

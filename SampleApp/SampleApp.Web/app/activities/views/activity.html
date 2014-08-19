@@ -11,13 +11,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-if="activitys.length > 0" ng-repeat="activity in activitys">
+                <tr ng-if="activities.length > 0" ng-repeat="activity in activities">
                     <td>{{ activity.Id }} </td>
                     <td>{{ activity.Name }}</td>
+                    <td>{{ activity.DeskReview }} </td>
+                    <td>{{ activity.OnsiteReview }}</td>
                     <td><a ng-click="addEditActivity(activity)" class="btn btn-primary" data-toggle="modal" data-target="#myActivityModal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
-                    <td><a ng-click="deleteActivity(activity.Id)" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
+                    <td><a ng-click="deleteActivity(activity.Id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
                 </tr>
-                <tr ng-if="activitys.length == 0">
+                <tr ng-if="activities.length == 0">
                     <td>No Activity Found.</td>
                 </tr>
             </tbody>

@@ -36,6 +36,9 @@ namespace SampleApp.Web
 
                    "~/app/consultant/controllers/consultant-ctrl.js",
                    "~/app/consultant/services/consultant-service.js",
+
+                    "~/app/activities/controllers/activity-ctrl.js",
+                   "~/app/activities/services/activity-service.js",
                    
                    "~/app/aboutus/controllers/aboutus-ctrl.js",
                    "~/app/contactus/controllers/contactus-ctrl.js",

@@ -20,6 +20,7 @@ namespace SampleApp.Web
             builder.RegisterType<ContractService>().As<IContract>();
             builder.RegisterType<SiteLocationService>().As<ISiteLocation>();
             builder.RegisterType<ConsultantService>().As<IConsultant>();
+            builder.RegisterType<ActivityService>().As<IActivity>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<SampleContext>().AsSelf();
             

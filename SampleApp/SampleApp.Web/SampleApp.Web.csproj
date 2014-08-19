@@ -134,7 +134,6 @@
     <Folder Include="app\aboutus\directories\" />
     <Folder Include="app\aboutus\services\" />
     <Folder Include="app\activities\directories\" />
-    <Folder Include="app\activities\services\" />
     <Folder Include="app\client\directories\" />
     <Folder Include="app\client\views\" />
     <Folder Include="app\contactus\directories\" />
@@ -175,6 +174,7 @@
     <Content Include="app\aboutus\controllers\aboutus-ctrl.js" />
     <Content Include="app\aboutus\views\aboutus.html" />
     <Content Include="app\activities\controllers\activity-ctrl.js" />
+    <Content Include="app\activities\services\activity-service.js" />
     <Content Include="app\activities\views\activity.html" />
     <Content Include="app\app.js" />
     <Content Include="app\client\controllers\client-ctrl.js" />
