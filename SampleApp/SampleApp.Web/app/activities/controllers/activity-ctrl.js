@@ -10,35 +10,37 @@
     });
 
     // edit Conslutant object
-    $scope.addEditConsultant = function (consultant) {
-        $scope.isConsultantShow = true;
-        $scope.ConsultantDetail = {};
-        $scope.ConsultantDetail.Id = consultant.Id;
-        $scope.ConsultantDetail.Name = consultant.Name;
-
+    $scope.addEditActivity = function (activity) {
+        $scope.isActivityShow = true;
+        $scope.ActivityDetail = {};
+        $scope.ActivityDetail.Id = activity.Id;
+        $scope.ActivityDetail.Name = activity.Name;
+        $scope.ActivityDetail.DeskReview = activity.DeskReview;
+        $scope.ActivityDetail.OnsiteReview = activity.OnsiteReview;
+      
     }
 
-    $scope.addUpdateConsultant = function (consultant) {
+    $scope.addUpdateActivity = function (activity) {
         // consultant.ProviderId = $scope.ProviderDetail.Id;
-        ConsultantFactory.save(consultant, function (response) {
-            $scope.isConsultantShow = false;
-            ConsultantFactory.query(function (response) {
+        ActivityFactory.save(activity, function (response) {
+            $scope.isActivityShow = false;
+            ActivityFactory.query(function (response) {
 
-                $scope.consultants = response;
+                $scope.activities = response;
             });
         });
     }
 
 
     //delete Provider object
-    $scope.deleteConsultant = function (consultantId) {
+    $scope.deleteActivity = function (activityId) {
 
-        var conf = confirm("Are you sure you want to delete this Consultant?");
+        var conf = confirm("Are you sure you want to delete this Activity?");
         if (conf) {
-            ConsultantFactory.remove({ key: consultantId }, function (response) {
-                ConsultantFactory.query(function (response) {
+            ActivityFactory.remove({ key: activityId }, function (response) {
+                ActivityFactory.query(function (response) {
 
-                    $scope.consultants = response;
+                    $scope.activities = response;
                 });
             });
         }
