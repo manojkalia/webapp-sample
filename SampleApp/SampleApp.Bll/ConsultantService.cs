@@ -88,37 +88,10 @@ namespace SampleApp.Service
                         providerConsultant.ConsultantId = consultant.Id;
                         providerConsultant.ProviderId = providerId;
 
-
                         _unitOfWork.ProviderConsultantRepository.InsertOrUpdate(providerConsultant);
-
                     }
                 }
                 _unitOfWork.Commit();
-<<<<<<< HEAD
-                var existingProviderConsultant = _unitOfWork.ProviderConsultantRepository.GetAll.Where(m => m.ConsultantId == consultant.Id).ToList();
-                foreach(var ProviderConsultant in existingProviderConsultant)
-                {
-                    _unitOfWork.ProviderConsultantRepository.Delete(ProviderConsultant.Id);
-                }
-                _unitOfWork.Commit();
-
-                if (consultantModel.ConsultantProviderIds != null)
-                {
-                    foreach (var providerId in consultantModel.ConsultantProviderIds)
-                    {
-                        var providerConsultant = new ProviderConsultant();
-                        providerConsultant.ConsultantId = consultant.Id;
-                        providerConsultant.ProviderId = providerId;
-
-
-                        _unitOfWork.ProviderConsultantRepository.InsertOrUpdate(providerConsultant);
-
-                    }
-                }
-                _unitOfWork.Commit();
-=======
->>>>>>> 2f9878a32a525f628e354fd8e385615d76fc0ed6
-                
                 return true;
             }, Resources.ExceptionInsertConsultant, consultantModel.Name);
 

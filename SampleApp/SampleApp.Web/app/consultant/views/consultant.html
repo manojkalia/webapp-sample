@@ -1,6 +1,6 @@
 ﻿<h1>Consultants</h1>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9">
         <table class="table table-hover table-condensed">
             <thead>
                 <tr>
@@ -19,7 +19,6 @@
                 </tr>
                 <tr ng-if="consultants.length == 0">
                     <td>No Consultant Found.</td>
-<<<<<<< HEAD
                 </tr>
             </tbody>
         </table>
@@ -35,53 +34,23 @@
                         <h4 class="modal-title" id="myModalLabel">Add Consultant</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
-                            <div class="controls col-sm-10">
-                                <input type="text" class="form-control" id="Text3" ng-model="ConsultantDetail.Name" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button ng-click="addUpdateConsultant(ConsultantDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-=======
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-right">
-            <a ng-click="addEditConsultant()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myConsultantModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Consultant</a>
-        </div>
-
-        <div class="modal fade" id="myConsultantModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div  class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Consultant</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
-                            <div class="controls col-sm-10">
-                                <input type="text" class="form-control" id="Text3" ng-model="ConsultantDetail.Name"  />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">Providers:</label>
-                            <div class="controls col-sm-10">
-                                <div ng-repeat="provider in Allproviders">
-                                    <input type="checkbox" value="{{provider.Id}}" ng-model="provider.IsChecked" ng-change="checkboxChange({{provider.Id}},{{provider.IsChecked}})">{{provider.Name}}
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
+                                <div class="controls col-sm-6">
+                                    <input type="text" class="form-control" id="Text3" ng-model="ConsultantDetail.Name" />
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">Providers:</label>
+                                <div class="controls  col-sm-6">
+                                    <div ng-repeat="provider in Allproviders">
+                                        <input type="checkbox" value="{{provider.Id}}" ng-model="provider.IsChecked" ng-change="checkboxChange({{provider.Id}},{{provider.IsChecked}})">{{provider.Name}}
+                               
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -91,6 +60,4 @@
             </div>
         </div>
     </div>
-
 </div>
->>>>>>> 2f9878a32a525f628e354fd8e385615d76fc0ed6

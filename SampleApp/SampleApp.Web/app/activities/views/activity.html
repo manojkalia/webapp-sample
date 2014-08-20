@@ -1,13 +1,15 @@
 ﻿<h1>Activity</h1>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9">
         <table class="table table-hover table-condensed">
             <thead>
                 <tr>
-                    <th style="min-width: 20px;">Id</th>
-                    <th style="min-width: 30px;">Activity Title</th>
-                    <th style="width: 25px;"></th>
-                    <th style="width: 25px;"></th>
+                    <th style="min-width: 10px;">Id</th>
+                    <th style="min-width: 20px;">Activity Title</th>
+                    <th style="min-width: 20px;">Desk Review</th>
+                    <th style="min-width: 20px;">Onsite Review</th>
+                    <th style="width: 15px;"></th>
+                    <th style="width: 15px;"></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,41 +30,34 @@
             <a ng-click="addEditActivity()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myActivityModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Activity</a>
         </div>
 
-        <div class="modal fade" id="myActivityModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div  class="modal-dialog">
+        <div class="modal fade" id="myActivityModal" tabindex="-1" role="dialog" aria-labelledby="myActivityModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Activity</h4>
+                        <h4 class="modal-title" id="H1">Add Activity</h4>
                     </div>
-                  
-
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
-                            <div class="controls col-sm-10">
-                                <input type="text" class="form-control" id="Text3" ng-model="ActivityDetail.Name" />
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">Name:</label>
+                                <div class="controls col-sm-6">
+                                    <input type="text" class="form-control" id="Text4" ng-model="ActivityDetail.Name" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">DeskReview:</label>
-                            <div class="controls col-sm-10">
-                                <input type="text" class="form-control" id="Text3" ng-model="ActivityDetail.DeskReview" />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">DeskReview:</label>
+                                <div class="controls col-sm-6">
+                                    <input type="text" class="form-control" id="Text5" ng-model="ActivityDetail.DeskReview" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="inputFirstName">OnsiteReview:</label>
-                            <div class="controls col-sm-10">
-                                <input type="text" class="form-control" id="Text3" ng-model="ActivityDetail.OnsiteReview" />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputFirstName">OnsiteReview:</label>
+                                <div class="controls col-sm-6">
+                                    <input type="text" class="form-control" id="Text6" ng-model="ActivityDetail.OnsiteReview" />
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -71,6 +66,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
+
+
