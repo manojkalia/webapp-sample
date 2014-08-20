@@ -15,7 +15,8 @@ namespace SampleApp.Service.Mappers
             ConsultantModel consultantModel = new ConsultantModel();
             consultantModel.Id = consultant.Id;
             consultantModel.Name = consultant.Name;
-            //consultantModel.ProviderConsultant = consultant.ProviderConsultant;
+            consultantModel.ConsultantProviderIds = consultant.ProviderConsultant.Select(x => x.ProviderId).ToList();
+            //consultantModel.ProviderConsultant = consultant...;
 
             return consultantModel;
         }

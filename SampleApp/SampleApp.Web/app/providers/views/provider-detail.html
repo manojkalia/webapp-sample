@@ -1,6 +1,6 @@
 ﻿<div class="row">
     <div class="col-md-9">
-        <h1 ng-hide="isAdd">Update Provider</h1>
+        <h1 ng-hide="isAdd">Manage Provider</h1>
         <h1 ng-show="isAdd">Add Provider</h1>
         <form novalidate="novalidate" class="form-horizontal">
             <div class="control-group row">
@@ -9,138 +9,141 @@
                     <input type="text" class="form-control" id="inputFirstName" ng-model="ProviderDetail.Name" />
                 </div>
             </div>
-            <div class="control-group row">
-                <label class="col-sm-2 control-label" for="inputFirstName">Contracts:</label>
-            </div>
-            <div class="control-group row">
-                <div class="col-md-8">
-                    <table class="table table-hover table-condensed">
-                        <thead>
-                            <tr>
-                                <th style="min-width: 20px;">Id</th>
-                                <th style="min-width: 20px;">Number</th>
-                                <th style="min-width: 20px;">Code</th>
-                                <th style="width: 20px;"></th>
-                                <th style="width: 20px;"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-if="ProviderDetail.Contracts.length > 0" ng-repeat="contract in ProviderDetail.Contracts">
-                                <td>{{ contract.Id }} </td>
-                                <td>{{ contract.Number }}</td>
-                                <td>{{ contract.Code }} </td>
-                                <td><a ng-click="addEditContract(contract)" class="btn btn-small btn-primary" data-target="#myContractModal" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
-                                <td><a ng-click="deleteContract(contract.Id)" class="btn btn-small btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
-                            </tr>
-                            <tr ng-if="ProviderDetail.Contracts.length == 0">
-                                <td>No Contract Found.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-right">
-                        <a ng-click="addEditContract()" class="btn btn-small btn-primary" data-toggle="modal" data-target="#myContractModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Contract</a>
-                    </div>
+            <div ng-hide="isAdd">
+                <div class="control-group row">
+                    <label class="col-sm-2 control-label" for="inputFirstName">Contracts:</label>
+                </div>
+                <div class="control-group row">
+                    <div class="col-md-8">
+                        <table class="table table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="min-width: 20px;">Id</th>
+                                    <th style="min-width: 20px;">Number</th>
+                                    <th style="min-width: 20px;">Code</th>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 20px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="ProviderDetail.Contracts.length > 0" ng-repeat="contract in ProviderDetail.Contracts">
+                                    <td>{{ contract.Id }} </td>
+                                    <td>{{ contract.Number }}</td>
+                                    <td>{{ contract.Code }} </td>
+                                    <td><a ng-click="addEditContract(contract)" class="btn btn-small btn-primary" data-target="#myContractModal" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
+                                    <td><a ng-click="deleteContract(contract.Id)" class="btn btn-small btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
+                                </tr>
+                                <tr ng-if="ProviderDetail.Contracts.length == 0">
+                                    <td>No Contract Found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-right">
+                            <a ng-click="addEditContract()" class="btn btn-small btn-primary" data-toggle="modal" data-target="#myContractModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Contract</a>
+                        </div>
 
-                    <div class="modal fade" id="myContractModal" tabindex="-1" role="dialog" aria-labelledby="myContractModalLabel" aria-hidden="true">
-                        <div ng-show="isContractShow" class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Add Contract</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="inputFirstName">Number:</label>
-                                        <div class="controls col-sm-10">
-                                            <input type="text" class="form-control" id="Text3" ng-model="ContractDetail.Number" />
+                        <div class="modal fade" id="myContractModal" tabindex="-1" role="dialog" aria-labelledby="myContractModalLabel" aria-hidden="true">
+                            <div ng-show="isContractShow" class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Add Contract</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="inputFirstName">Number:</label>
+                                            <div class="controls col-sm-10">
+                                                <input type="text" class="form-control" id="Text3" ng-model="ContractDetail.Number" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="inputFirstName">Code:</label>
+                                            <div class="controls col-sm-10">
+                                                <input type="text" class="form-control" id="Text4" ng-model="ContractDetail.Code" />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="inputFirstName">Code:</label>
-                                        <div class="controls col-sm-10">
-                                            <input type="text" class="form-control" id="Text4" ng-model="ContractDetail.Code" />
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button ng-click="addUpdateContract(ContractDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button ng-click="addUpdateContract(ContractDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group row">
+                    <label class="col-sm-2 control-label" for="inputFirstName">Site Address:</label>
+                </div>
+                <div class="control-group row">
+                    <div class="col-md-8">
+                        <table class="table table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="min-width: 20px;">Site Address</th>
+                                    <th style="min-width: 20px;">NPI</th>
+                                    <th style="min-width: 20px;">HFS</th>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 20px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="ProviderDetail.SiteLocations.length > 0" ng-repeat="SiteLocation in ProviderDetail.SiteLocations">
+                                    <td>{{ SiteLocation.Address }} </td>
+                                    <td>{{ SiteLocation.NPI }}</td>
+                                    <td>{{ SiteLocation.HFS }} </td>
+                                    <td><a ng-click="addEditSiteLocation(SiteLocation)" data-toggle="modal" data-target="#mySiteModal" class="btn btn-small btn-primary"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
+                                    <td><a ng-click="deleteSiteLocation(SiteLocation.Id)" class="btn btn-small btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
+                                </tr>
+                                <tr ng-if="ProviderDetail.SiteLocations.length == 0">
+                                    <td>No Contract Found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-right">
+                            <a ng-click="addEditSiteLocation()" class="btn btn-small btn-primary" data-toggle="modal" data-target="#mySiteModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Site</a>
+                        </div>
+
+                        <div class="modal fade" id="mySiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div ng-show="isSiteLocationShow" class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="H1">Add Site Address</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="inputFirstName">Address:</label>
+                                            <div class="controls col-sm-10">
+                                                <input type="text" class="form-control" id="Text1" ng-model="siteLocationDetail.Address" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="inputFirstName">NPI:</label>
+                                            <div class="controls col-sm-10">
+                                                <input type="text" class="form-control" id="Text2" ng-model="siteLocationDetail.NPI" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="inputFirstName">HFS:</label>
+                                            <div class="controls col-sm-10">
+                                                <input type="text" class="form-control" id="Text5" ng-model="siteLocationDetail.HFS" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button ng-click="addUpdateSiteLocation(siteLocationDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="control-group row">
-                <label class="col-sm-2 control-label" for="inputFirstName">Site Address:</label>
-            </div>
-            <div class="control-group row">
-                <div class="col-md-8">
-                    <table class="table table-hover table-condensed">
-                        <thead>
-                            <tr>
-                                <th style="min-width: 20px;">Site Address</th>
-                                <th style="min-width: 20px;">NPI</th>
-                                <th style="min-width: 20px;">HFS</th>
-                                <th style="width: 20px;"></th>
-                                <th style="width: 20px;"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-if="ProviderDetail.SiteLocations.length > 0" ng-repeat="SiteLocation in ProviderDetail.SiteLocations">
-                                <td>{{ SiteLocation.Address }} </td>
-                                <td>{{ SiteLocation.NPI }}</td>
-                                <td>{{ SiteLocation.HFS }} </td>
-                                <td><a ng-click="addEditSiteLocation(SiteLocation)" data-toggle="modal" data-target="#mySiteModal" class="btn btn-small btn-primary"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit</a></td>
-                                <td><a ng-click="deleteSiteLocation(SiteLocation.Id)" class="btn btn-small btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a></td>
-                            </tr>
-                            <tr ng-if="ProviderDetail.SiteLocations.length == 0">
-                                <td>No Contract Found.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-right">
-                        <a ng-click="addEditSiteLocation()" class="btn btn-small btn-primary" data-toggle="modal" data-target="#mySiteModal"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add Site</a>
-                    </div>
-
-                    <div class="modal fade" id="mySiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div ng-show="isSiteLocationShow" class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="H1">Add Site Address</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="inputFirstName">Address:</label>
-                                        <div class="controls col-sm-10">
-                                            <input type="text" class="form-control" id="Text1" ng-model="siteLocationDetail.Address" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="inputFirstName">NPI:</label>
-                                        <div class="controls col-sm-10">
-                                            <input type="text" class="form-control" id="Text2" ng-model="siteLocationDetail.NPI" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="inputFirstName">HFS:</label>
-                                        <div class="controls col-sm-10">
-                                            <input type="text" class="form-control" id="Text5" ng-model="siteLocationDetail.HFS" />
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button ng-click="addUpdateSiteLocation(siteLocationDetail)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <div class="control-group row text-right">
                 <div class="controls">
                     <a ng-click="goToHome()" class="btn btn-small btn-primary">Cancel</a>

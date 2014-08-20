@@ -10,6 +10,8 @@ namespace SampleApp.Entities.Domain
     public class ProviderConsultant : IEntity
     {
         public int Id { get; set; }
+        public int ProviderId { get; set; }
+        public int ConsultantId { get; set; }
         public virtual Consultant Consultant { get; set; }
         public virtual Provider Provider { get; set; }
        
