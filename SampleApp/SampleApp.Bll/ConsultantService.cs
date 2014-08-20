@@ -73,6 +73,28 @@ namespace SampleApp.Service
                 Consultant consultant = ConsultantMapper.ConvertModelToEntity(consultantModel);
                 _unitOfWork.ConsultantRepository.InsertOrUpdate(consultant);
                 _unitOfWork.Commit();
+                var existingProviderConsultant = _unitOfWork.ProviderConsultantRepository.GetAll.Where(m => m.ConsultantId == consultant.Id).ToList();
+                foreach(var ProviderConsultant in existingProviderConsultant)
+                {
+                    _unitOfWork.ProviderConsultantRepository.Delete(ProviderConsultant.Id);
+                }
+                _unitOfWork.Commit();
+
+                if (consultantModel.ConsultantProviderIds != null)
+                {
+                    foreach (var providerId in consultantModel.ConsultantProviderIds)
+                    {
+                        var providerConsultant = new ProviderConsultant();
+                        providerConsultant.ConsultantId = consultant.Id;
+                        providerConsultant.ProviderId = providerId;
+
+
+                        _unitOfWork.ProviderConsultantRepository.InsertOrUpdate(providerConsultant);
+
+                    }
+                }
+                _unitOfWork.Commit();
+                
                 return true;
             }, Resources.ExceptionInsertConsultant, consultantModel.Name);
 

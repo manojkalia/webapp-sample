@@ -12,6 +12,7 @@ namespace SampleApp.Entities.Models
         }
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsChecked { get; set; }
         public  List<ProviderActivityModel> ProviderActivity { get; set; }
         public List<ProviderConsultantModel> ProviderConsultant { get; set; }
         public List<ContractModel> Contracts { get; set; }
