@@ -1,10 +1,6 @@
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.dll
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.pdb
-D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.dll
-D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
-D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll
-D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.pdb
-D:\Project\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csprojResolveAssemblyReference.cache
-E:\Manoj\Asma\SampleApp\webapp-sample\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csprojResolveAssemblyReference.cache
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.dll
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\bin\Debug\SampleApp.Entities.pdb
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csproj.AssemblyReference.cache
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.csproj.CoreCompileInputs.cache
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.dll
+C:\Manoj\Work\Apps\SampleApp\SampleApp.Entities\obj\Debug\SampleApp.Entities.pdb
